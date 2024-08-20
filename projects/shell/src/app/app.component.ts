@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SharedLibService } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'shell';
+  constructor(public shared: SharedLibService) {
+
+  }
+  ngAfterViewInit() {
+    this.shared.userName = 'vairamuthu';
+  }
 }
